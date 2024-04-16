@@ -13,6 +13,9 @@ then
 elif [ $command == "combine" ]
 then
     bash combine.sh
+elif [ $command == "update" ]
+then
+    bash update.sh
 else
     echo "Invalid command"
 fi
