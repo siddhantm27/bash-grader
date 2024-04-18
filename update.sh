@@ -1,16 +1,20 @@
 #!/bin/bash
 
-read -p "Enter roll no.: " roll_no
-read -p "Enter name: " name
 
-next_exam="y"
+read -p "Enter roll no.: " roll_no #read roll no. from user
+read -p "Enter name: " name #read student name from user
+
+next_exam="y" #condition to update marks
+
+#if next_exam is "y", then update marks for another exam. It is first initialised to "y" to update marks for the first time. 
+
 while [[ $next_exam == "y" ]]
 do
-    read -p "Enter exam: " exam
-    read -p "Enter updated marks: " marks
+    read -p "Enter exam: " exam #read exam name from user
+    read -p "Enter updated marks: " marks #read updated marks from user
 
-    filename="${exam}.csv"
-
+    filename="${exam}.csv" #get the filename of the csv file which contains the records for the user selected exam
+    
     awk -v roll=$roll_no -v marks=$marks -v exam=$exam -f update.awk main.csv > temp.csv && mv temp.csv main.csv
     awk -v roll=$roll_no -v marks=$marks 'BEGIN{FS=",";OFS=","}
     {

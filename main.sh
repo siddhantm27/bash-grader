@@ -16,6 +16,9 @@ then
 elif [ $command == "update" ]
 then
     bash update.sh
+elif [[ $command == "git_init" ]]
+then
+    bash git.sh $1 $2
 else
     echo "Invalid command"
 fi
