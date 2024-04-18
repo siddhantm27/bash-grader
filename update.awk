@@ -8,7 +8,7 @@ BEGIN{
     {
         for(i=1;i<=NF;i++)
         {
-            if($i==exam)
+            if(tolower($i)==tolower(exam))
             {
                 field=i
             }
@@ -16,7 +16,7 @@ BEGIN{
         print $0
     }
     else{
-        if($1==roll || $1==name)
+        if(tolower($1)==tolower(roll) || tolower($1)==tolower(name))
     {
         $field=marks
         print $0
