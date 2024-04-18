@@ -19,6 +19,17 @@ then
 elif [[ $command == "git_init" ]]
 then
     bash git.sh $1 $2
+elif [[ $command == "git_add" ]]
+then
+    bash git.sh $1
+elif [[ $command == "git_commit" ]]
+then 
+    if [[ $# == 3 && $2 == "-m" ]]
+    then
+        bash git.sh $1 $2 $3
+    else
+        echo 'Use "./main.sh git_commit -m <message>" to commit changes.'
+    fi
 else
     echo "Invalid command"
 fi
