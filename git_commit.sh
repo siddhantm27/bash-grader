@@ -32,6 +32,7 @@ git_diff(){
     echo "Files Added: "${files_added[@]}
     echo "Files Removed: "${files_removed[@]}
     echo "Files Modified: "${files_modified[@]}
+    rm current_diff_temp file_changes
 }
 
 if [[ -d ./.gitrepo && -a ./.gitrepo/.gitreponame ]] 
