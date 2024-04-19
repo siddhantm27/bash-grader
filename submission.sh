@@ -28,7 +28,17 @@ then
     then
         bash git_commit.sh $3
     else
-        echo 'Use "./main.sh git_commit -m <message>" to commit changes.'
+        echo 'Use "bash submission.sh git_commit -m <message>" to commit changes.'
+    fi
+elif [[ $command = "git_checkout" ]]
+then
+    if [[ $# == 2 ]]
+    then
+        bash git_checkout.sh $2
+    elif [[ $# == 3 && $2 == "-m" ]]
+        bash git_checkout.sh $2 $3
+    else
+        echo 'Use "bash submission.sh git_checkout <commit_id>" or "bash submission.sh git_checkout -m "<commit-message>"" to checkout a commit.'
     fi
 else
     echo "Invalid command"

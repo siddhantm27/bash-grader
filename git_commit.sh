@@ -32,7 +32,13 @@ git_diff(){
     echo "Files Added: "${files_added[@]}
     echo "Files Removed: "${files_removed[@]}
     echo "Files Modified: "${files_modified[@]}
+
+    echo "Files Added: "${files_added[@]} >> $remote_repo_path/.git_log
+    echo "Files Removed: "${files_removed[@]} >> $remote_repo_path/.git_log
+    echo "Files Modified: "${files_modified[@]} >> $remote_repo_path/.git_log
+
     rm current_diff_temp file_changes
+
 }
 
 if [[ -d ./.gitrepo && -a ./.gitrepo/.gitreponame ]] 
@@ -45,9 +51,13 @@ then
         commit_id=$(uuidgen -r | tr -dc '0-9' | head -c 16)
         mkdir $remote_repo_path/commits/$commit_id
         cp -r $remote_repo_path/stage/* $remote_repo_path/commits/$commit_id
+
         echo "Commit_ID : $commit_id" >> $remote_repo_path/.git_log
         echo "Date and Time : $(date)" >> $remote_repo_path/.git_log
         echo "Commit Message : $commit_message" >> $remote_repo_path/.git_log
+
+        # echo "Commit Message : $commit_message" > $remote_repo_path/commits/$commit_id/.commit_message    
+
         echo >> $remote_repo_path/.git_log
         cp $remote_repo_path/.git_log .gitrepo
         rm -r $remote_repo_path/stage
