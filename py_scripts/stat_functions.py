@@ -11,7 +11,7 @@ def all_marks(file):
                     if row[2]=="a":
                         mark=0
                     else:
-                        mark=int(row[2])
+                        mark=float(row[2])
                     marks_list.append(mark)
                 else:
                     total_marks=0
@@ -19,7 +19,7 @@ def all_marks(file):
                         if row[i]=="a":
                             total_marks+=0
                         else:
-                            total_marks+=int(row[i])
+                            total_marks+=float(row[i])
                     marks_list.append(total_marks)
         return marks_list
     

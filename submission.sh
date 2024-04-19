@@ -44,6 +44,9 @@ then
 elif [[ $command == "stats" ]]
 then
     python3 py_scripts/stats.py
+elif [[ $command == "graphs" ]]
+then
+    python3 py_scripts/graphs.py
 elif [[ $command == "rank" ]]
 then
     if [[ $# == 2 ]]
