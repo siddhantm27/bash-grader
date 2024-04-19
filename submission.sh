@@ -36,6 +36,7 @@ then
     then
         bash git_checkout.sh $2
     elif [[ $# == 3 && $2 == "-m" ]]
+    then
         bash git_checkout.sh $2 $3
     else
         echo 'Use "bash submission.sh git_checkout <commit_id>" or "bash submission.sh git_checkout -m "<commit-message>"" to checkout a commit.'
