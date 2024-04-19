@@ -35,5 +35,18 @@ def stdev(file):
 def mode(file):
     return statistics.mode(all_marks(file))
 
+def percentile25(file):
+    marks=all_marks(file)
+    marks.sort()
+    return marks[int(len(marks)/4)]
 
+def percentile75(file):
+    marks=all_marks(file)
+    marks.sort()
+    return marks[int(3*len(marks)/4)]
+
+def percentile90(file):
+    marks=all_marks(file)
+    marks.sort()
+    return marks[int(9*len(marks)/10)]
 
