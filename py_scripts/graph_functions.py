@@ -58,4 +58,5 @@ def scatter_plot(file):
     plt.axhline(y=perc_75, color='orange', linestyle='--', label=f'75th Percentile={round(perc_75,2)}')
     plt.axhline(y=mean_marks, color='red', linestyle='--', label=f'Mean={round(mean_marks,2)}')
     plt.legend()
+    plt.plot(range(1,len(marklist)+1),marklist)
     plt.show()

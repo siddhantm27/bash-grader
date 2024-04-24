@@ -36,6 +36,7 @@ git_diff(){
     echo "Files Added: "${files_added[@]} >> $remote_repo_path/.git_log
     echo "Files Removed: "${files_removed[@]} >> $remote_repo_path/.git_log
     echo "Files Modified: "${files_modified[@]} >> $remote_repo_path/.git_log
+    echo "----------------------------------------" >> $remote_repo_path/.git_log
 
     rm current_diff_temp file_changes
 
@@ -48,7 +49,7 @@ then
     then
         commit_message=$1
         mkdir -p $remote_repo_path/commits
-        commit_id=$(uuidgen -r | tr -dc '0-9' | head -c 16)
+        commit_id=$(uuidgen -r | tr -dc 'a-z0-9' | head -c 16)
         mkdir $remote_repo_path/commits/$commit_id
         cp -r $remote_repo_path/stage/* $remote_repo_path/commits/$commit_id
 

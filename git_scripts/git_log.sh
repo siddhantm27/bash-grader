@@ -1,0 +1,1 @@
+cat .gitrepo/.git_log

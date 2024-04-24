@@ -8,19 +8,16 @@ then
     read -p "Do you want to reinitialize the remote repository to the new location? (y/n): " choice
     if [[ $choice == "y" || $choice == "Y" ]]
     then   
-        mkdir temp #create a temporary directory
-        cp -r $remote_repo_path temp #copy the remote repository to the temporary directory
-        rm -r $remote_repo_path #remove the old remote repository
-        remote_repo_path=$1 #file path to the new remote repository
-        if [ ! -d $remote_repo_path ] #if the directory does not exist
+        new_remote_repo_path=$1 #file path to the new remote repository
+        if [ ! -d $new_remote_repo_path ] #if the directory does not exist
         then
-            mkdir $remote_repo_path #create the directory
+            mkdir $new_remote_repo_path #create the directory
         fi
-        cp -r temp $remote_repo_path #move the contents of the old remote repository to the new remote repository
-        rm -r temp #remove the temporary directory
-        echo "remote_repo_path:$remote_repo_path" > ./.gitrepo/.gitreponame #update the path to the remote repository in the file .gitreponame
+        cp -r $remote_repo_path/* $new_remote_repo_path #copy the remote repository to the temporary directory
+        rm -r $remote_repo_path #remove the old remote repository
+        echo "Remote repository reinitialized at $new_remote_repo_path"
+        echo "remote_repo_path:$new_remote_repo_path" > ./.gitrepo/.gitreponame #update the path to the remote repository in the file .gitreponame
     fi
-    exit 1
 else
     #if the directory and file does not exist, that means that the remote repository has not been initialized yet.
     remote_repo_path=$1 #path to remote repo given by the user
@@ -31,3 +28,9 @@ else
     mkdir .gitrepo #create the hidden directory .gitrepo
     echo "remote_repo_path:$remote_repo_path" > ./.gitrepo/.gitreponame   #write the path to the remote repository in the file .gitreponame 
 fi
+
+remote_repo_path=$(head -n 1 ./.gitrepo/.gitreponame |  awk 'BEGIN{FS=":"}{print $2}')
+
+mkdir -p $remote_repo_path/.ogfiles
+cp *.csv $remote_repo_path/.ogfiles
+
