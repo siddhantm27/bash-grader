@@ -20,13 +20,11 @@ hash(){
             if [[ -f $remote_repo_path/commits/$commit_id/${file}.patch && -s $remote_repo_path/commits/$commit_id/${file}.patch ]]
             then
                 patch -b $remote_repo_path/.ogfiles/$file $remote_repo_path/commits/$commit_id/$file.patch
-                echo "--------------------------"
-                echo $(ls $remote_repo_path/.ogfiles)
-                echo "--------------------------"
-                cp $remote_repo_path/.ogfiles/$file ./
+                mv $remote_repo_path/.ogfiles/$file ./
                 mv "$remote_repo_path/.ogfiles/${file}.orig" "$remote_repo_path/.ogfiles/$file"
+            else
+                cp $remote_repo_path/.ogfiles/$file $PWD
             fi
-            cp $remote_repo_path/.ogfiles/$file ./
         done
     else
         echo "Commit id not found"
