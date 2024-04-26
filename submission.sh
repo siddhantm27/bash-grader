@@ -4,17 +4,37 @@ command=$1
 
 if [ $command == "upload" ]
 then
-    filepath=$2
-    bash $(dirname "$0")/upload.sh $filepath
+    if [ $# -ne 2 ] #check if the number of arguments is not equal to 2
+    then
+        echo "Usage: bash submission.sh upload <filepath>"
+        exit 1
+    fi
+    filepath=$2 #stores the second argument in the variable filepath
+    bash bash_scripts/upload.sh $filepath #calls the upload.sh script and passes the filepath as an argument
 elif [ $command == "total" ]
 then
-    awk -f $(dirname "$0")/total.awk $(dirname "$0")/main.csv > $(dirname "$0")/temp.csv
-    mv $(dirname "$0")/temp.csv $(dirname "$0")/main.csv
+    if [ $# -ne 1 ] #check if the number of arguments is not equal to 1
+    then
+        echo "Usage: bash submission.sh total" 
+        exit 1
+    fi
+    awk -f bash_scripts/total.awk ./main.csv > ./temp.csv #calls the total.awk script and stores the output in a temp file
+    mv ./temp.csv $(dirname "$0")/main.csv #renames the temp file to main.csv
 elif [ $command == "combine" ]
 then
+    if [ $# -ne 1 ] #check if the number of arguments is not equal to 1
+    then
+        echo "Usage: bash submission.sh combine"
+        exit 1
+    fi
     bash combine.sh
-elif [ $command == "update" ]
+elif [ $command == "update" ] 
 then
+    if [ $# -ne 1 ] #check if the number of arguments is not equal to 1
+    then
+        echo "Usage: bash submission.sh update"
+        exit 1
+    fi
     bash update.sh
 elif [[ $command == "git_init" ]]
 then

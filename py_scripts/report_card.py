@@ -18,6 +18,7 @@ def generate_report_card(name,roll_no,exams,student_marks,percentiles_list,grade
     I1.text((500, 430), f"{name}", font=myFont, fill =(0, 0, 0))
     I1.text((320, 550), f"{roll_no}", font=myFont, fill =(0, 0, 0))
     I1.text((1000, 550), f"{grade}", font=myFont, fill =(0, 0, 0))
+    
     x=300
     y=850
     for i in range(len(exams)):

@@ -1,7 +1,7 @@
 from stat_functions import max_marks
 
 def enter_grades():
-    grades=input("Enter grades in descending order (comma-seperated)")
+    grades=input("Enter grades in descending order (comma-seperated): ")
     grades=grades.split(",")
     print(len(grades))
     return grades
