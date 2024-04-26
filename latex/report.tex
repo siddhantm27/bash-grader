@@ -46,36 +46,83 @@ Bash Grader is a command line interface for instructors to grade students and ma
     \item Total the marks of each student over all exams
     \item Combine the marks of all exams into a single csv file
     \item Update the marks of a student in a particular exam
+    \item Implement a working git system with init,add,commit and checkout functionalities
+\end{itemize}
+\subsection{Customisations}
+\begin{itemize}
+    \item A staging area with add and remove funtionalities.
+    \item A diff patch system for the checkout functionality
+    \item Commit history log
+    \item Graphs for a particular exam or all exams
+    \item Stats for a particular exam or all exams
+    \item Report card generation for all students with grade calculation for all students, based on manual rubrics from the instructor/user
+    \item Ranked marklists for a particular exam or all exams
 \end{itemize}
 \newpage
 \section{Usage}
 \subsection{Upload}
 Run the following command to upload a csv file in your current directory.
 \begin{verbatim}
-    bash submission upload <filename>
+    bash submission.sh upload <filename>
 \end{verbatim}
 
 
 \subsection{Total}
 Run the following command to total the marks of each student over all exams into a total column in \verb"main.csv".
 \begin{Verbatim}
-    bash submission total
+    bash submission.sh total
 \end{Verbatim}
 
 
 \subsection{Combine}
 The following command combines all the csv files in the current directory into \verb"main.csv".
 \begin{Verbatim}
-    bash submission combine
+    bash submission.sh combine
 \end{Verbatim}
 
 
 \subsection{Update}
 Run the following command to update the marks of a particular student
 \begin{verbatim}
-    bash submission update
+    bash submission.sh update
 \end{verbatim}
 
+\subsection{Rank}
+Run the following command to get the ranked marklist for a particular exam or \verb"main.csv".
+\begin{verbatim}
+    bash submission.sh rank <exam-name>
+\end{verbatim}
+
+\subsection{Git Init}
+Run the following command to initialize a remote git repository.
+\begin{verbatim}
+    bash submission.sh git_init <remote-repo-path>
+\end{verbatim}
+
+\subsection{Git Add}
+Run the following command to add files from the current directory to the staging area.
+\begin{verbatim}
+    bash submission.sh git_add
+\end{verbatim}
+
+\subsection{Git Remove}
+Run the following command to remove files from the staging area.
+\begin{verbatim}
+    bash submission.sh git_remove
+\end{verbatim}
+
+\subsection{Git Commit}
+Run the following command to commit the files in the staging area to the remote repository.
+\begin{verbatim}
+    bash submission.sh git_commit -m "commit message"
+\end{verbatim}
+
+\subsection{Git Checkout}
+Run the following command to checkout a particular commit from the remote repository.
+\begin{verbatim}
+    bash submission.sh git_checkout <commit-id> 
+    bash submission.sh git_checkout -m <commit-message>
+\end{verbatim}
 \newpage
 
 \section{Working}
@@ -114,7 +161,6 @@ In the above example, the script combines all the csv files in the current direc
     \item A mesh of \verb"a"'s is created with the dimensions of the header.
     \item Then the script iterates over all exam files and fills in the marks of each student in the mesh, whenever they are found. This ensures that anyone who is not present in a particular exam file is marked as \verb"a"(absent) in \verb"main.csv" for that particular exam.
 \end{enumerate}
-\hfill
 \textbf{Script files : combine.sh combine.awk}
 \newpage
 
@@ -143,5 +189,56 @@ In the above example, the script updates the marks of \textbf{23B0956} in \verb"
 The script first asks the user for the roll number and name of the student whose marks are to be updated. It then checks if the student's name matches with the name paired up with the roll number given by the user. If the names do not match, the script confirms with the user with a prompt for the correct name.\\
 It then checks if the student is present in the \verb"main.csv" file and if the exam file exists. If the student is present in the \verb"main.csv" file, the script updates the marks of the student in \verb"main.csv" by calling \verb"update_main.awk" and the exam file by calling \verb"update_exam.awk".\\
 It also asks the user if they want to update the marks of the student in some other exam and repeats the same process. If the user does not want to update the marks of the student in any other exam, the script checks if \verb"main.csv" had been totaled before. If it was, then the script calls \verb"total.awk" to correct the total, as the marks in \verb"main.csv" have been updated.\\
+
 \textbf{Script files : update.sh update\_exam.awk update\_main.awk total.awk} 
+
+\subsection{Rank}
+This commands takes the examname as a command line argument and ranks the students based on the marks in that exam.
+If the user enters \verb"main" as the examname, the script ranks the students based on the total marks in \verb"main.csv". The ranked marklists are sorted according to rank and are stored in the folder \verb"ranked_marklists" in the current directory.\\
+
+\textbf{Script files : rank.sh }
+
+\subsection{Git Init}
+This command initializes a remote git repository at the path given by the user as a command line argument.\\
+It also checks if the path given is a valid path. If a remote repository is already initialized for the current directory, the script prompts the user to confirm if they want to reinitialize the repository.
+If the user confirms, the script reinitializes a fresh remote repository at the path provided by the user.\\ 
+
+It also creates a hidden folder \verb".gitrepo" in the current directory. This folder contains a hidden file \verb".gitreponame" which stores the name of the remote repository and \verb".git_log" which records the commit history.\\
+
+Apart from initialization, the script also copies all the csv files in the current directory at the time of initialization to a hidden folder \verb".ogfiles" in the remote repository. The \verb".ogfiles" folder contains the first version of every file which was ever committed. This serves as a refernce point for all files, for my \textbf{diff patch} system for \verb"git\_checkout" to work.\\
+
+\textbf{Script files : git\_init.sh}
+\subsection{Git Add}
+This command first checks if a remote repository has been initialized for the current directory. If it has not, the script prompts the user to initialize a remote repository first.\\
+This command then prompts the user to enter all the files, which they want to add to the staging area, separated by spaces. It then copies all the files to the staging area in the remote repository. If any particular file doesnt exist in the current directory, it gives an error message.\\
+\textbf{Script files : git\_add.sh}
+
+\subsection{Git Remove}
+This command first checks if a remote repository has been initialized for the current directory. If it has not, the script prompts the user to initialize a remote repository first.\\
+It then prompts the user to enter all the files, which they want to remove from the staging area, separated by spaces. It then deletes all the files from the staging area in the remote repository. If any particular file doesnt exist in the staging area, it gives an error message.\\
+
+\textbf{Script files : git\_remove.sh}
+
+\subsection{Git Commit}
+The command first checks if a remote repository has been initialized for the current directory. If it has not, the script prompts the user to initialize a remote repository first.\\
+It then checks what all files are modified or added to the staging area with respect to the first version of the file in the \verb".ogfiles" folder. It updates the \verb".git_log" file with the commit message and the files which were modified or added in this commit, which is uniqely identified by the commit message, given by the user and the 16 character hash commit id, generated randomly using the \verb"uuidgen" command. A folder with the commit-id as its name is created in the commits folder of the remote repository.\\
+
+If any file in the staging area is not present in the \verb".ogfiles" folder, it adds it to the \verb".ogfiles" folder.\\ It then copies the diff of the file from the \verb".ogfiles" folder and the file in the staging area into the commit-id folder.\\
+
+It also gets the list of all csv files in the current repository at the time of the commit and stores their name in a hidden \verb".files" file in the commit-id folder. This provides a snapshot of all the files in the current repository at the time of the commit, which is useful at the time of \verb"git\_checkout".The stage is deleted after the commit is made.\\
+
+\textbf{Script files : git\_commit.sh}
+
+\subsection{Git Checkout}
+The command first checks if a remote repository has been initialized for the current directory. If it has not, the script prompts the user to initialize a remote repository first.\\
+The user can checkout a particular commit by entering the commit-id or the commit message. The script then checks for matches to the commit-id or the commit message in the \verb".git_log" file. If it finds a match, it goes to the commit-id folder.//
+There, it gets the snapshot of the current repository at the time of the commit from the \verb".files" file. It also gets the list of patch files in the commit-id folder.\\
+
+It deletes all the .csv files from the current directory and then iterates over all files in the snapshot. If the patch file exists for a particular file, it applies \verb"patch -b" command to this patch file and the corresponding file in the \verb".ogfiles" folder, which gives back the version of the file at that commit as \verb"<filename>.csv" and also the original file in the \verb".ogfiles" as \verb"<filename>.csv.orig".
+The .csv file is then copied from the \verb".ogfiles" folder to the current directory and the .csv.orig file is renamed to .csv file, hence restoring the original file in the \verb".ogfiles" folder.\\
+
+\textbf{Script files : git\_checkout.sh}
+
+
+
 \end{document}

@@ -38,7 +38,7 @@ then
     bash update.sh
 elif [[ $command == "git_init" ]]
 then
-    if [[ $# != 2 ]]
+    if [[ $# != 2 ]] #check if the number of arguments is not equal to 2
     then
         echo 'Use "bash submission.sh git_init <remote-repo-path>" to initialize a remote repository.'
         exit 1
@@ -54,9 +54,12 @@ then
     bash git_scripts/git_add.sh
 elif [[ $command == "git_commit" ]]
 then 
-    if [[ $# == 3 && $2 == "-m" ]]
+    if [[ $# == 3 && $2 == "-m" ]] #checks if the number of arguments is equal to 3 and the second argument is -m
     then
-        bash git_scripts/git_commit2.sh $3
+    #shifts the arguments to the left by 2 positions
+    shift
+    shift
+        bash git_scripts/git_commit.sh $@ #calls the git_commit2.sh script and passes the commit message as an argument
     else
         echo 'Use "bash submission.sh git_commit -m <message>" to commit changes.'
     fi
@@ -64,10 +67,10 @@ elif [[ $command == "git_checkout" ]]
 then
     if [[ $# == 2 ]]
     then
-        bash git_scripts/git_checkout2.sh $2
+        bash git_scripts/git_checkout.sh $2
     elif [[ $# == 3 && $2 == "-m" ]]
     then
-        bash git_scripts/git_checkout2.sh $2 $3
+        bash git_scripts/git_checkout.sh $2 $3
     else
         echo 'Use "bash submission.sh git_checkout <commit_id>" or "bash submission.sh git_checkout -m "<commit-message>"" to checkout a commit.'
     fi
@@ -96,9 +99,9 @@ then
     python3 py_scripts/graphs.py
 elif [[ $command == "rank" ]]
 then
-    if [[ $# == 2 ]]
+    if [[ $# == 2 ]] #checks if the number of arguments is equal to 2
     then
-        bash rank.sh $2
+        bash bash_scripts/rank.sh $2 #calls the rank.sh script and passes the exam name as an argument
     else
         echo 'Use "bash submission.sh rank <exam-name>" to rank the csv files by marks.'
     fi

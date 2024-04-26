@@ -10,10 +10,6 @@ then
     do
         if [ -f $file ] #if the file exists in the current directory
         then
-            if [ ! -f $remote_repo_path/.ogfiles/$file ] #if the file does not exist in the .ogfiles directory in the remote repo
-            then
-                cp $file $remote_repo_path/.ogfiles #copy the file to the .ogfiles directory in the remote repo
-            fi
             cp $file $remote_repo_path/stage #copy the file to the stage in the remote repo
             echo "$file added to staging area." 
         else

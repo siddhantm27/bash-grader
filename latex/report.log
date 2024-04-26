@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.3)  26 APR 2024 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.3)  27 APR 2024 04:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -303,7 +303,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images//bashlogo.png, id=60, 2055.68pt x 2055.68pt>
+<./images//bashlogo.png, id=112, 2055.68pt x 2055.68pt>
 File: ./images//bashlogo.png Graphic file (type png)
 <use ./images//bashlogo.png>
 Package pdftex.def Info: ./images//bashlogo.png  used on input line 32.
@@ -326,79 +326,134 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout5 = `report.toc'.
 
  [2] [3] [4]
-<./images//upload.png, id=101, 734.745pt x 153.57375pt>
+<./images//upload.png, id=167, 734.745pt x 153.57375pt>
 File: ./images//upload.png Graphic file (type png)
 <use ./images//upload.png>
-Package pdftex.def Info: ./images//upload.png  used on input line 83.
+Package pdftex.def Info: ./images//upload.png  used on input line 130.
 (pdftex.def)             Requested size: 483.69684pt x 101.10355pt.
-<./images//total.png, id=102, 736.7525pt x 274.02374pt>
+<./images//total.png, id=168, 736.7525pt x 274.02374pt>
 File: ./images//total.png Graphic file (type png)
 <use ./images//total.png>
-Package pdftex.def Info: ./images//total.png  used on input line 91.
+Package pdftex.def Info: ./images//total.png  used on input line 138.
 (pdftex.def)             Requested size: 284.52756pt x 105.8235pt.
-<./images//before_combine.png, id=103, 640.3925pt x 289.08pt>
+<./images//before_combine.png, id=169, 640.3925pt x 289.08pt>
 File: ./images//before_combine.png Graphic file (type png)
 <use ./images//before_combine.png>
-Package pdftex.def Info: ./images//before_combine.png  used on input line 100.
+Package pdftex.def Info: ./images//before_combine.png  used on input line 147.
 (pdftex.def)             Requested size: 241.84685pt x 85.35725pt.
-<./images//after_combine.png, id=104, 673.51625pt x 277.035pt>
+<./images//after_combine.png, id=170, 673.51625pt x 277.035pt>
 File: ./images//after_combine.png Graphic file (type png)
 <use ./images//after_combine.png>
-Package pdftex.def Info: ./images//after_combine.png  used on input line 105.
+Package pdftex.def Info: ./images//after_combine.png  used on input line 152.
 (pdftex.def)             Requested size: 241.84904pt x 85.35577pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 99--109
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 146--156
 []$[]$ $[]$ 
  []
 
 [5 <./images//upload.png> <./images//total.png> <./images//before_combine.png> <./images//after_combine.png>]
-<./images//quiz-before.png, id=119, 716.6775pt x 259.97125pt>
+<./images//quiz-before.png, id=185, 716.6775pt x 259.97125pt>
 File: ./images//quiz-before.png Graphic file (type png)
 <use ./images//quiz-before.png>
-Package pdftex.def Info: ./images//quiz-before.png  used on input line 124.
+Package pdftex.def Info: ./images//quiz-before.png  used on input line 170.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
-<./images//quiz-after.png, id=120, 716.6775pt x 259.97125pt>
+<./images//quiz-after.png, id=186, 716.6775pt x 259.97125pt>
 File: ./images//quiz-after.png Graphic file (type png)
 <use ./images//quiz-after.png>
-Package pdftex.def Info: ./images//quiz-after.png  used on input line 128.
+Package pdftex.def Info: ./images//quiz-after.png  used on input line 174.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 123--131
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 169--177
 []$[]$ $[]$ 
  []
 
-<./images//main-before.png, id=121, 716.6775pt x 259.97125pt>
+<./images//main-before.png, id=187, 716.6775pt x 259.97125pt>
 File: ./images//main-before.png Graphic file (type png)
 <use ./images//main-before.png>
-Package pdftex.def Info: ./images//main-before.png  used on input line 134.
+Package pdftex.def Info: ./images//main-before.png  used on input line 180.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
-<./images//main-after.png, id=122, 716.6775pt x 259.97125pt>
+<./images//main-after.png, id=188, 716.6775pt x 259.97125pt>
 File: ./images//main-after.png Graphic file (type png)
 <use ./images//main-after.png>
-Package pdftex.def Info: ./images//main-after.png  used on input line 138.
+Package pdftex.def Info: ./images//main-after.png  used on input line 184.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 133--141
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 179--187
 []$[]$ $[]$ 
  []
 
-[6 <./images//quiz-before.png> <./images//quiz-after.png> <./images//main-before.png> <./images//main-after.png>] (./report.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+[6 <./images//quiz-before.png> <./images//quiz-after.png> <./images//main-before.png> <./images//main-after.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--236
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--239
+
+ []
+
+[7] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 9B91EB30C6F8FCBD36F49487F23CC001;1367.
+(rerunfilecheck)             Checksum: 176B9FF7CC8CB0D72C0B6096F73DB41E;2733.
  ) 
 Here is how much of TeX's memory you used:
- 11056 strings out of 480171
- 178635 string characters out of 5894490
- 474133 words of memory out of 5000000
- 28865 multiletter control sequences out of 15000+600000
+ 11083 strings out of 480171
+ 179035 string characters out of 5894490
+ 478136 words of memory out of 5000000
+ 28878 multiletter control sequences out of 15000+600000
  474316 words of font info for 45 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 67i,8n,77p,467b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,8n,77p,609b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/siddhant/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (6 pages, 630564 bytes).
+Output written on report.pdf (7 pages, 640621 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 252 PDF objects out of 1000 (max. 8388607)
+ 207 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 
