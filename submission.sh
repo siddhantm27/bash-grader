@@ -69,6 +69,15 @@ then
     else
         echo 'Use "bash submission.sh git_log" to view the log.'
     fi
+elif [[ $command == "git_remove" ]]
+then
+    if [[ $# == 1 ]]
+    then
+        bash git_scripts/git_remove.sh
+    else
+        echo 'Use "bash submission.sh git_remove" to remove the repository.'
+    fi
+
 elif [[ $command == "stats" ]]
 then
     python3 py_scripts/stats.py

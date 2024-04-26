@@ -94,4 +94,5 @@ done
 
 #renames the tempmain.csv file to main.csv
 sort -t, -k 1 -n tempmain.csv > main.csv
-# mv tempmain.csv main.csv
+rm tempmain.csv
+
