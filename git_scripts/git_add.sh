@@ -10,6 +10,10 @@ then
     do
         if [ -f $file ] 
         then
+            if [ ! -f $remote_repo_path/.ogfiles/$file ]
+            then
+                cp $file $remote_repo_path/.ogfiles
+            fi
             cp $file $remote_repo_path/stage
             echo "$file added to staging area."
         else

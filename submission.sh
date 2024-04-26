@@ -38,10 +38,15 @@ then
     bash update.sh
 elif [[ $command == "git_init" ]]
 then
+    if [[ $# != 2 ]]
+    then
+        echo 'Use "bash submission.sh git_init <remote-repo-path>" to initialize a remote repository.'
+        exit 1
+    fi
     bash git_scripts/git_init.sh $2
 elif [[ $command == "git_add" ]]
 then
-    bash git_scripts/git_add2.sh
+    bash git_scripts/git_add.sh
 elif [[ $command == "git_commit" ]]
 then 
     if [[ $# == 3 && $2 == "-m" ]]
