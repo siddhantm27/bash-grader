@@ -46,6 +46,11 @@ then
     bash git_scripts/git_init.sh $2
 elif [[ $command == "git_add" ]]
 then
+    if [[ $# != 1 ]]
+    then
+        echo 'Use "bash submission.sh git_add" to stage changes.'
+        exit 1
+    fi
     bash git_scripts/git_add.sh
 elif [[ $command == "git_commit" ]]
 then 
