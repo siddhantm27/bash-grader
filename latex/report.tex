@@ -46,7 +46,7 @@ Bash Grader is a command line interface for instructors to grade students and ma
     \item Total the marks of each student over all exams
     \item Combine the marks of all exams into a single csv file
     \item Update the marks of a student in a particular exam
-    \item Implement a working git system with init,add,commit and checkout functionalities
+    \item Implement a working git system with init, add, commit and checkout functionalities
 \end{itemize}
 \subsection{Customisations}
 \begin{itemize}
@@ -125,6 +125,25 @@ Run the following command to checkout a particular commit from the remote reposi
 \end{verbatim}
 \newpage
 
+\subsection{Git Log}
+Run the following command to get the commit history log.
+\begin{verbatim}
+    bash submission.sh git_log
+\end{verbatim}
+
+\subsection{Graphs}
+Run the following command to get the graphs for a particular exam or all exams.
+\begin{verbatim}
+    bash submission.sh graphs
+\end{verbatim}
+
+\subsection{Stats}
+Run the following command to get the stats for a particular exam or \verb"main.csv".
+\begin{verbatim}
+    bash submission.sh stats
+\end{verbatim}
+
+
 \section{Working}
 \subsection{Upload}
 \includegraphics[width=\textwidth]{upload.png}
@@ -162,7 +181,7 @@ In the above example, the script combines all the csv files in the current direc
     \item Then the script iterates over all exam files and fills in the marks of each student in the mesh, whenever they are found. This ensures that anyone who is not present in a particular exam file is marked as \verb"a"(absent) in \verb"main.csv" for that particular exam.
 \end{enumerate}
 \textbf{Script files : combine.sh combine.awk}
-\newpage
+
 
 \subsection{Update}
 \begin{figure}[h]
@@ -221,7 +240,7 @@ It then prompts the user to enter all the files, which they want to remove from 
 
 \subsection{Git Commit}
 The command first checks if a remote repository has been initialized for the current directory. If it has not, the script prompts the user to initialize a remote repository first.\\
-It then checks what all files are modified or added to the staging area with respect to the first version of the file in the \verb".ogfiles" folder. It updates the \verb".git_log" file with the commit message and the files which were modified or added in this commit, which is uniqely identified by the commit message, given by the user and the 16 character hash commit id, generated randomly using the \verb"uuidgen" command. A folder with the commit-id as its name is created in the commits folder of the remote repository.\\
+It then checks what all files in the staging area are modified with respect to the first version of the file in the \verb".ogfiles" folder. It also checks for any new files which were created and committed for the first time. It then updates the \verb".git_log" file with these modified and added files, along with the commit message and the files which were modified or added in this commit, which is uniqely identified by the commit message, given by the user and the 16 character hash commit id, generated randomly using the \verb"uuidgen" command. A folder with the commit-id as its name is created in the commits folder of the remote repository.\\
 
 If any file in the staging area is not present in the \verb".ogfiles" folder, it adds it to the \verb".ogfiles" folder.\\ It then copies the diff of the file from the \verb".ogfiles" folder and the file in the staging area into the commit-id folder.\\
 
@@ -231,7 +250,7 @@ It also gets the list of all csv files in the current repository at the time of 
 
 \subsection{Git Checkout}
 The command first checks if a remote repository has been initialized for the current directory. If it has not, the script prompts the user to initialize a remote repository first.\\
-The user can checkout a particular commit by entering the commit-id or the commit message. The script then checks for matches to the commit-id or the commit message in the \verb".git_log" file. If it finds a match, it goes to the commit-id folder.//
+The user can checkout a particular commit by entering the commit-id (even entering the first few characters of the commit-id works too, if they are unique and not shared with any other commit-id) or the commit message. The script then parses and checks for matches to the commit-id or the commit message in the \verb".git_log" file. If it finds a match, it goes to the commit-id folder.//
 There, it gets the snapshot of the current repository at the time of the commit from the \verb".files" file. It also gets the list of patch files in the commit-id folder.\\
 
 It deletes all the .csv files from the current directory and then iterates over all files in the snapshot. If the patch file exists for a particular file, it applies \verb"patch -b" command to this patch file and the corresponding file in the \verb".ogfiles" folder, which gives back the version of the file at that commit as \verb"<filename>.csv" and also the original file in the \verb".ogfiles" as \verb"<filename>.csv.orig".
@@ -239,6 +258,44 @@ The .csv file is then copied from the \verb".ogfiles" folder to the current dire
 
 \textbf{Script files : git\_checkout.sh}
 
+\subsection{Git Log}
+The command first checks if the remote repository has been initialized for the current directory. If it has not, the script prompts the user to initialize a remote repository first.
+The script then reads the \verb".git_log" file and prints the commit history log in a readable format, with the commit-id, commit-message and time of commit. It also displays any new files created in the current directory, when they are committed for the first time, by the name \textbf{New files added:}, and if any files were modified from the time when the time the remote repository was initialized, it also shows them under the name \textbf{Files modified:} \\
 
+While this command only displays the commit history log, it is actually the \verb"git_commit" command which actually updates the \verb".git_log" file, at every commit.\\
+
+\textbf{Script files : git\_log.sh}
+
+\subsection{Graphs}
+This command calls the \verb"graphs.py" python script, which has a interface where users can choose between a histogram and a scatter plot. Then, the user can choose between a particular exam or \verb"main" (for \verb"main", it considers the total marks for mark generation). It then calls the corresponding function from \verb"graph_functions.py" to plot the graph, if the csv file of the exam exists.\\
+The graphs also show the demarcation for 90th percentile, 75th percentile and mean marks.\\
+
+\textbf{Modules used for graph generation: os, csv, matplotlib}\\
+
+\textbf{Script files: graphs.py graph\_functions.py}
+
+\begin{figure}[h]
+    \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\linewidth, height=5cm]{histogram.png} 
+    \caption{Histogram for midsem marks}
+    \end{subfigure}
+    \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=\linewidth, height=5cm]{scatter-plot.png}
+    \caption{Scatter plot for main.csv}
+    \end{subfigure}
+\end{figure}
+\newpage
+
+\subsection{Stats}
+This command calls the \verb"stats.py" python script, which has a interface where users can choose between a particular exam or \verb"main" (for \verb"main", it considers the total marks for mark generation). It then displays the stats for that particular exam or \verb"main", if the csv file for the exam exists.\\
+The stats include the mean, median, mode, standard deviation, $25^{th}$ percentile, $75^{th}$ percentile, $90^{th}$ percentile and maximum marks.\\
+All these stats are calculated by calling their respective functions from \verb"stats_functions.py".\\
+
+\textbf{Modules used for stats generation: os, csv, statistics}\\
+
+\textbf{Script files: stats.py stats\_functions.py}\\
+\begin{center}
+    \includegraphics[height=5cm,width=10cm]{stats.png}
+\end{center}
 
 \end{document}

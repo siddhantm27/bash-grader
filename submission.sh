@@ -93,9 +93,19 @@ then
 
 elif [[ $command == "stats" ]]
 then
+    if [[ $# != 1 ]]
+    then
+        echo 'Use "bash submission.sh stats" to generate statistics.'
+        exit 1
+    fi
     python3 py_scripts/stats.py
 elif [[ $command == "graphs" ]]
 then
+    if [[ $# != 1 ]]
+    then
+        echo 'Use "bash submission.sh graphs" to generate graphs.'
+        exit 1
+    fi
     python3 py_scripts/graphs.py
 elif [[ $command == "rank" ]]
 then
