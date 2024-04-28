@@ -45,7 +45,7 @@ Bash Grader is a command line interface for instructors to grade students and ma
     \item Upload a marklist in the form of a csv file.
     \item Total the marks of each student over all exams
     \item Combine the marks of all exams into a single csv file
-    \item Update the marks of a student in a particular exam
+    \item Update the marks of a student in a particular exam or add a student's record to an exam
     \item Implement a working git system with init, add, commit and checkout functionalities
 \end{itemize}
 \subsection{Customisations}
@@ -82,7 +82,7 @@ The following command combines all the csv files in the current directory into \
 
 
 \subsection{Update}
-Run the following command to update the marks of a particular student
+Run the following command to update the marks of a particular student or add a student's record to an exam.
 \begin{verbatim}
     bash submission.sh update
 \end{verbatim}
@@ -143,6 +143,11 @@ Run the following command to get the stats for a particular exam or \verb"main.c
     bash submission.sh stats
 \end{verbatim}
 
+\subsection{Report Card}
+Run the following command to get the report card/s for a particular student or all students.  
+\begin{verbatim}
+    bash submission.sh report_card
+\end{verbatim}
 
 \section{Working}
 \subsection{Upload}
@@ -161,6 +166,13 @@ If the marks column has \verb"a" as its entry, the script skips that row while t
 \textbf{Script files : total.awk }
 
 \subsection{Combine}
+In the below example, the script combines all the csv files in the current directory into a single \verb"main.csv" file. The script checks if the file is a csv file and if it is not the \verb"main.csv" file.\\ \verb"main.csv" is constructed from scratch in the following steps:
+\begin{enumerate}
+    \item First, an array of all unique roll numbers and names is created.
+    \item Then, based on the exam files, a header is created with the roll numbers and names.
+    \item A mesh of \verb"a"'s is created with the dimensions of the header.
+    \item Then the script iterates over all exam files and fills in the marks of each student in the mesh, whenever they are found. This ensures that anyone who is not present in a particular exam file is marked as \verb"a"(absent) in \verb"main.csv" for that particular exam.
+\end{enumerate}
 \begin{figure}[h]
     \begin{subfigure}{0.5\textwidth}
     \includegraphics[width=\linewidth, height=3cm]{before_combine.png} 
@@ -173,14 +185,8 @@ If the marks column has \verb"a" as its entry, the script skips that row while t
     \label{fig:subim2}
     \end{subfigure}
 \end{figure}
-In the above example, the script combines all the csv files in the current directory into a single \verb"main.csv" file. The script checks if the file is a csv file and if it is not the \verb"main.csv" file.\\ \verb"main.csv" is constructed from scratch in the following steps:
-\begin{enumerate}
-    \item First, an array of all unique roll numbers and names is created.
-    \item Then, based on the exam files, a header is created with the roll numbers and names.
-    \item A mesh of \verb"a"'s is created with the dimensions of the header.
-    \item Then the script iterates over all exam files and fills in the marks of each student in the mesh, whenever they are found. This ensures that anyone who is not present in a particular exam file is marked as \verb"a"(absent) in \verb"main.csv" for that particular exam.
-\end{enumerate}
-\textbf{Script files : combine.sh combine.awk}
+
+\textbf{Script files : combine.sh, combine.awk}
 
 
 \subsection{Update}
@@ -207,9 +213,10 @@ In the above example, the script combines all the csv files in the current direc
 In the above example, the script updates the marks of \textbf{23B0956} in \verb"quiz1.csv" and \verb"main.csv".\\
 The script first asks the user for the roll number and name of the student whose marks are to be updated. It then checks if the student's name matches with the name paired up with the roll number given by the user. If the names do not match, the script confirms with the user with a prompt for the correct name.\\
 It then checks if the student is present in the \verb"main.csv" file and if the exam file exists. If the student is present in the \verb"main.csv" file, the script updates the marks of the student in \verb"main.csv" by calling \verb"update_main.awk" and the exam file by calling \verb"update_exam.awk".\\
+If the student's record does not exist in the \verb"main.csv" file, the script prompts the user to confirm if they want to add the student's record to an exam file and \verb"main.csv". If the user confirms, the script adds the student's record to the exam file and \verb"main.csv".\\
 It also asks the user if they want to update the marks of the student in some other exam and repeats the same process. If the user does not want to update the marks of the student in any other exam, the script checks if \verb"main.csv" had been totaled before. If it was, then the script calls \verb"total.awk" to correct the total, as the marks in \verb"main.csv" have been updated.\\
 
-\textbf{Script files : update.sh update\_exam.awk update\_main.awk total.awk} 
+\textbf{Script files : update.sh, update\_exam.awk, update\_main.awk, total.awk} 
 
 \subsection{Rank}
 This commands takes the examname as a command line argument and ranks the students based on the marks in that exam.
@@ -272,7 +279,7 @@ The graphs also show the demarcation for 90th percentile, 75th percentile and me
 
 \textbf{Modules used for graph generation: os, csv, matplotlib}\\
 
-\textbf{Script files: graphs.py graph\_functions.py}
+\textbf{Script files: graphs.py, graph\_functions.py}
 
 \begin{figure}[h]
     \begin{subfigure}{0.5\textwidth}
@@ -293,9 +300,32 @@ All these stats are calculated by calling their respective functions from \verb"
 
 \textbf{Modules used for stats generation: os, csv, statistics}\\
 
-\textbf{Script files: stats.py stats\_functions.py}\\
+\textbf{Script files: stats.py, stats\_functions.py}\\
 \begin{center}
     \includegraphics[height=5cm,width=10cm]{stats.png}
 \end{center}
 
+\subsection{Report Card}
+This command calls the \verb"report_card.py" python script, which has a interface where users can choose between a particular student or all students. It then displays the report card for that particular student or saves the pdf of all student report cards in the \verb"report_cards" folder in the current directory.\\
+
+It gets the grades and percentile rubrics for the grades from the instructor by calling functions from the \verb"grade.py" script. It then gets all the exams conducted and the maximum marks scored in each of these exams. Student marks for all students are also fetched by using the module \verb"csv".\\ It then calculates the weighted percentage of each student by using the formula:
+\begin{equation}
+    W.P. = \frac{\sum_{i=1}^{n} {M_i} \times {M_{max_i}}}{\sum_{i=1}^{n} {M_{max_i}}^2} \times 100\\
+\end{equation}
+where $M_i$ is the marks scored by the student in exam i, $M_{max_i}$ is the maximum marks scored in exam i and $n$ is the number of exams.\\
+
+This is considering the maximum marks scored in each exam as the total marks for that exam. This ensures that a person with more marks in an exam with a greater weightage gets a higher weighted percentage.\\
+
+The script then calculates the grade of each student by using the weighted percentage and the rubrics provided by the instructor. Then the percentiles of each student are calcualted with this weighted percentage using the \verb"scipy" module.
+Then, the report card is generated from a template report card and text is put on the template using the \verb"PIL" module and then converted to pdf form for all students, while it's only displayed for one person.
+
+\begin{center}
+    \includegraphics[height=10cm,width=8cm]{report-card.png}
+\end{center}
+
+\textbf{Modules used for report card generation: os, csv, statistics, scipy, PIL}\\
+
+\textbf{Script files: report\_card.py, grade.py}
+
 \end{document}
+

@@ -1,10 +1,11 @@
-from stat_functions import max_marks
 
+#function to enter the grades in descending order
 def enter_grades():
     grades=input("Enter grades in descending order (comma-seperated): ")
     grades=grades.split(",")
     return grades
 
+# Function for instructor to add their rubrics for grading
 def decide_rubrics(grades):
     rubrics=[]
     print("Enter your rubrics for grading")
@@ -26,7 +27,8 @@ def decide_rubrics(grades):
     print("Generating report card/s...")
     return rubrics
 
-def decide_perc(student_marks,max_marks,rubrics,grades):
+# Function to decide the weighted percentage of the student based on an algorithm that takes into account the maximum marks of that exam 
+def decide_perc(student_marks,max_marks):
     weighted_sum=0
     total_max_marks=0
     for i in range(len(student_marks)):
@@ -38,6 +40,7 @@ def decide_perc(student_marks,max_marks,rubrics,grades):
     weighted_perc=(weighted_sum/total_max_marks)*100
     return weighted_perc
 
+# Function to decide the grade of the student based on the rubrics given in decide_rubrics
 def decide_grade(perc,rubrics,grades):
     for i in range(len(rubrics)):
         if perc<=int(rubrics[i][0]) and perc>int(rubrics[i][1]):

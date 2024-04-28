@@ -119,7 +119,8 @@ elif [[ $command == "report_card" ]]
 then
     bash combine.sh
     mkdir -p report_cards
-    python3 py_scripts/report_card2.py
+    python3 py_scripts/report_card.py
+    # rm report_cards/*.png
 else
     echo "Invalid command"
 fi
