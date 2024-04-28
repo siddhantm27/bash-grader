@@ -128,6 +128,26 @@ then
         exit 1
     fi
     bash git_scripts/git_head.sh
+elif [[ $command == "help" ]]
+then
+    echo "Usage: bash submission.sh <command> <arguments>"
+    echo "Commands:"
+    echo "upload <filepath> : Uploads the file to the main.csv file"
+    echo "total : Calculates the total marks of each student and stores it in the main.csv file"
+    echo "combine : Combines all the csv files into a single csv file"
+    echo "update : Updates the main.csv file with the latest changes"
+    echo "git_init <remote-repo-path> : Initializes a remote repository"
+    echo "git_add : Stages the changes"
+    echo "git_commit -m <message> : Commits the changes with the given message"
+    echo "git_checkout <commit_id> : Checks out the commit with the given commit id"
+    echo "git_log : Displays the log"
+    echo "git_remove : Removes the repository"
+    echo "stats : Generates statistics"
+    echo "graphs : Generates graphs"
+    echo "rank <exam-name> : Ranks the csv files by marks"
+    echo "report_card : Generates report cards"
+    echo "git_head : Displays the current version/commit the user is on"
+    echo "help : Displays the usage of the commands"
 else
     echo "Invalid command"
 fi
