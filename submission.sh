@@ -128,8 +128,7 @@ then
         exit 1
     fi
     bash git_scripts/git_head.sh
-elif [[ $command == "help" ]]
-then
+else
     echo "Usage: bash submission.sh <command> <arguments>"
     echo "Commands:"
     echo "upload <filepath> : Uploads the file to the main.csv file"
@@ -140,6 +139,7 @@ then
     echo "git_add : Stages the changes"
     echo "git_commit -m <message> : Commits the changes with the given message"
     echo "git_checkout <commit_id> : Checks out the commit with the given commit id"
+    echo "git_checkout -m <commit_message> : Checks out the commit with the given commit message"
     echo "git_log : Displays the log"
     echo "git_remove : Removes the repository"
     echo "stats : Generates statistics"
@@ -148,6 +148,4 @@ then
     echo "report_card : Generates report cards"
     echo "git_head : Displays the current version/commit the user is on"
     echo "help : Displays the usage of the commands"
-else
-    echo "Invalid command"
 fi
