@@ -32,6 +32,8 @@ hash(){
                 fi
             fi
         done
+        echo "Checked out commit-id : $commit_id" #print the message
+        echo $commit_id > ./.gitrepo/.githead #update the commit id of the head in the .githead file
     else
         echo "Commit id not found" #if the commit id is not found
     fi
@@ -58,9 +60,12 @@ message(){
                 patch -b $remote_repo_path/.ogfiles/$file $remote_repo_path/commits/$commit_id/$file.patch
                 cp $remote_repo_path/.ogfiles/$file ./ #copy the file to the current directory
                 mv $remote_repo_path/.ogfiles/${file}.orig $remote_repo_path/.ogfiles/$file #rename the .orig file to the original file name i.e. remove the .orig extension
+
             fi
             cp $remote_repo_path/.ogfiles/$file ./ #copy the file to the current directory
         done
+        echo switched to commit-id : $commit_id #print the commit id
+        echo $commit_id > ./.gitrepo/.githead #update the commit id of the head in the .githead file
     else
         echo "Commit id not found" #if the commit id is not found
     fi
@@ -70,6 +75,7 @@ if [[ $# == 1 ]] #if the number of arguments is 1
 then
     hash $1 #call the function hash with the argument $1
 elif [[ $# == 2 ]] #if the number of arguments is 2
+then
     message $2 #call the function message with the argument $2
 else
     echo "Invalid number of arguments"

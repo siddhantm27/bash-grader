@@ -51,6 +51,7 @@ then
         commit_message=$@ #sets the 1st argument as the commit message
         mkdir -p $remote_repo_path/commits #creates the commits directory if it does not exist
         commit_id=$(uuidgen -r | tr -dc 'a-z0-9' | head -c 16) #generates a random commit id hash
+        echo $commit_id > .gitrepo/.githead #stores the commit id of the head in the .githead file
         mkdir $remote_repo_path/commits/$commit_id #creates a directory with the commit id as the name
         # cp -r $remote_repo_path/stage/* $remote_repo_path/commits/$commit_id
         files_to_commit=$(ls $remote_repo_path/stage) #gets the list of files in the stage directory and stores it in an array

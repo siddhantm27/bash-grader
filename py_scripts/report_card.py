@@ -11,11 +11,11 @@ from grade import enter_grades
 from grade import decide_grade
 
 def generate_report_card(name,roll_no,exams,student_marks,max_marks_list,grade,all):
-    img = Image.open('report_template.png') #opens the template file
+    img = Image.open('assets/report_template.png') #opens the template file
 
     I1 = ImageDraw.Draw(img) #draws the image
 
-    myFont = ImageFont.truetype('./regular_font.ttf', 55) #sets the font and size from the ttf file
+    myFont = ImageFont.truetype('assets/regular_font.ttf', 55) #sets the font and size from the ttf file
     
     I1.text((500, 430), f"{name}", font=myFont, fill =(0, 0, 0)) #writes the name on the image
     I1.text((320, 550), f"{roll_no}", font=myFont, fill =(0, 0, 0)) #writes the roll no. on the image

@@ -59,7 +59,7 @@ then
     #shifts the arguments to the left by 2 positions
     shift
     shift
-        bash git_scripts/git_commit.sh $@ #calls the git_commit2.sh script and passes the commit message as an argument
+        bash git_scripts/git_commit2.sh $@ #calls the git_commit2.sh script and passes the commit message as an argument
     else
         echo 'Use "bash submission.sh git_commit -m <message>" to commit changes.'
     fi
@@ -70,7 +70,7 @@ then
         bash git_scripts/git_checkout.sh $2
     elif [[ $# == 3 && $2 == "-m" ]]
     then
-        bash git_scripts/git_checkout.sh $2 $3
+        bash git_scripts/git_checkout.sh $2 "$3"
     else
         echo 'Use "bash submission.sh git_checkout <commit_id>" or "bash submission.sh git_checkout -m "<commit-message>"" to checkout a commit.'
     fi
@@ -117,10 +117,17 @@ then
     fi
 elif [[ $command == "report_card" ]]
 then
-    bash combine.sh
-    mkdir -p report_cards
-    python3 py_scripts/report_card.py
-    # rm report_cards/*.png
+    bash combine.sh #combines the csv files
+    mkdir -p report_cards #creates a directory report_cards
+    python3 py_scripts/report_card.py #calls the report_card.py script
+elif [[ $command == "git_head" ]]
+then
+    if [[ $# != 1 ]]
+    then
+        echo 'Use "bash submission.sh git_head" to view the head commit.'
+        exit 1
+    fi
+    bash git_scripts/git_head.sh
 else
     echo "Invalid command"
 fi

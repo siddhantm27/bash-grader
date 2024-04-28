@@ -57,6 +57,7 @@ Bash Grader is a command line interface for instructors to grade students and ma
     \item Stats for a particular exam or all exams
     \item Report card generation for all students with grade calculation for all students, based on manual rubrics from the instructor/user
     \item Ranked marklists for a particular exam or all exams
+    \item Shows git head
 \end{itemize}
 \newpage
 \section{Usage}
@@ -129,6 +130,12 @@ Run the following command to checkout a particular commit from the remote reposi
 Run the following command to get the commit history log.
 \begin{verbatim}
     bash submission.sh git_log
+\end{verbatim}
+
+\subsection{Git Head}
+Run the following command to get the head of the git repository, i.e. the current version of directory.
+\begin{verbatim}
+    bash submission.sh git_head
 \end{verbatim}
 
 \subsection{Graphs}
@@ -326,6 +333,21 @@ Then, the report card is generated from a template report card and text is put o
 \textbf{Modules used for report card generation: os, csv, statistics, scipy, PIL}\\
 
 \textbf{Script files: report\_card.py, grade.py}
+
+\begin{thebiblography}{9}
+
+\bibliographystyle{plain}
+
+\bibitem{bash}Bash \url{https://www.gnu.org/software/bash/manual/bash.html}
+\bibitem{awk} \url{https://www.gnu.org/software/gawk/manual/gawk.html}
+\bibitem{python} \url{https://docs.python.org/3/}
+\bibitem{matplotlib} \url{https://matplotlib.org/}
+\bibitem{scipy} \url{https://www.scipy.org/}
+\bibitem{PIL} \url{https://pillow.readthedocs.io/en/stable/}
+    \bibitem{csv} \url{https://docs.python.org/3/library/csv.html
+
+\bibitem{os} \url{https://docs.python.org/3/library/os.html}
+\end{thebibliography}
 
 \end{document}
 

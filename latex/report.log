@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.3)  28 APR 2024 21:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.3)  28 APR 2024 22:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -262,7 +262,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 29.
 LaTeX Info: Redefining \pageref on input line 29.
 LaTeX Info: Redefining \nameref on input line 29.
- (./report.out) (./report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
 
@@ -303,7 +302,7 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<./images//bashlogo.png, id=144, 2055.68pt x 2055.68pt>
+<./images//bashlogo.png, id=4, 2055.68pt x 2055.68pt>
 File: ./images//bashlogo.png Graphic file (type png)
 <use ./images//bashlogo.png>
 Package pdftex.def Info: ./images//bashlogo.png  used on input line 32.
@@ -316,159 +315,158 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 32.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images//bashlogo.png>] (./report.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 4.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 4.
-)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images//bashlogo.png>]
 \tf@toc=\write5
 \openout5 = `report.toc'.
 
  [2] [3] [4]
-<./images//upload.png, id=207, 734.745pt x 153.57375pt>
+<./images//upload.png, id=46, 734.745pt x 153.57375pt>
 File: ./images//upload.png Graphic file (type png)
 <use ./images//upload.png>
-Package pdftex.def Info: ./images//upload.png  used on input line 154.
+Package pdftex.def Info: ./images//upload.png  used on input line 161.
 (pdftex.def)             Requested size: 483.69684pt x 101.10355pt.
-<./images//total.png, id=208, 736.7525pt x 274.02374pt>
+<./images//total.png, id=47, 736.7525pt x 274.02374pt>
 File: ./images//total.png Graphic file (type png)
 <use ./images//total.png>
-Package pdftex.def Info: ./images//total.png  used on input line 162.
+Package pdftex.def Info: ./images//total.png  used on input line 169.
 (pdftex.def)             Requested size: 284.52756pt x 105.8235pt.
  [5 <./images//upload.png> <./images//total.png>]
-<./images//before_combine.png, id=215, 640.3925pt x 289.08pt>
+<./images//before_combine.png, id=64, 640.3925pt x 289.08pt>
 File: ./images//before_combine.png Graphic file (type png)
 <use ./images//before_combine.png>
-Package pdftex.def Info: ./images//before_combine.png  used on input line 178.
+Package pdftex.def Info: ./images//before_combine.png  used on input line 185.
 (pdftex.def)             Requested size: 241.84685pt x 85.35725pt.
-<./images//after_combine.png, id=216, 673.51625pt x 277.035pt>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 188.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 188.
+<./images//after_combine.png, id=65, 673.51625pt x 277.035pt>
 File: ./images//after_combine.png Graphic file (type png)
 <use ./images//after_combine.png>
-Package pdftex.def Info: ./images//after_combine.png  used on input line 183.
+Package pdftex.def Info: ./images//after_combine.png  used on input line 190.
 (pdftex.def)             Requested size: 241.84904pt x 85.35577pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 177--187
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 184--194
 []$[]$ $[]$ 
  []
 
-<./images//quiz-before.png, id=217, 716.6775pt x 259.97125pt>
+<./images//quiz-before.png, id=66, 716.6775pt x 259.97125pt>
 File: ./images//quiz-before.png Graphic file (type png)
 <use ./images//quiz-before.png>
-Package pdftex.def Info: ./images//quiz-before.png  used on input line 195.
+Package pdftex.def Info: ./images//quiz-before.png  used on input line 202.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
-<./images//quiz-after.png, id=218, 716.6775pt x 259.97125pt>
+<./images//quiz-after.png, id=67, 716.6775pt x 259.97125pt>
 File: ./images//quiz-after.png Graphic file (type png)
 <use ./images//quiz-after.png>
-Package pdftex.def Info: ./images//quiz-after.png  used on input line 199.
+Package pdftex.def Info: ./images//quiz-after.png  used on input line 206.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 194--202
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 201--209
 []$[]$ $[]$ 
  []
 
-<./images//main-before.png, id=219, 716.6775pt x 259.97125pt>
+<./images//main-before.png, id=68, 716.6775pt x 259.97125pt>
 File: ./images//main-before.png Graphic file (type png)
 <use ./images//main-before.png>
-Package pdftex.def Info: ./images//main-before.png  used on input line 205.
+Package pdftex.def Info: ./images//main-before.png  used on input line 212.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
-<./images//main-after.png, id=220, 716.6775pt x 259.97125pt>
+<./images//main-after.png, id=69, 716.6775pt x 259.97125pt>
 File: ./images//main-after.png Graphic file (type png)
 <use ./images//main-after.png>
-Package pdftex.def Info: ./images//main-after.png  used on input line 209.
+Package pdftex.def Info: ./images//main-after.png  used on input line 216.
 (pdftex.def)             Requested size: 241.84088pt x 85.35838pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 204--212
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 211--219
 []$[]$ $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--218
+Underfull \hbox (badness 10000) in paragraph at lines 220--225
 
  []
 
 [6 <./images//before_combine.png> <./images//after_combine.png> <./images//quiz-before.png> <./images//quiz-after.png> <./images//main-before.png> <./images//main-after.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--231
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--245
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+Underfull \hbox (badness 10000) in paragraph at lines 256--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--262
+Underfull \hbox (badness 10000) in paragraph at lines 266--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--265
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--271
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--273
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--279
+Underfull \hbox (badness 10000) in paragraph at lines 284--286
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
-<./images//histogram.png, id=244, 603.25375pt x 460.72125pt>
+<./images//histogram.png, id=99, 603.25375pt x 460.72125pt>
 File: ./images//histogram.png Graphic file (type png)
 <use ./images//histogram.png>
-Package pdftex.def Info: ./images//histogram.png  used on input line 286.
+Package pdftex.def Info: ./images//histogram.png  used on input line 293.
 (pdftex.def)             Requested size: 241.8403pt x 142.2597pt.
-<./images//scatter-plot.png, id=245, 594.22pt x 464.73625pt>
+<./images//scatter-plot.png, id=100, 594.22pt x 464.73625pt>
 File: ./images//scatter-plot.png Graphic file (type png)
 <use ./images//scatter-plot.png>
-Package pdftex.def Info: ./images//scatter-plot.png  used on input line 290.
+Package pdftex.def Info: ./images//scatter-plot.png  used on input line 297.
 (pdftex.def)             Requested size: 241.85463pt x 142.25845pt.
 
-Overfull \hbox (2.22221pt too wide) in paragraph at lines 285--293
+Overfull \hbox (2.22221pt too wide) in paragraph at lines 292--300
 []$[]$ $[]$ 
  []
 
@@ -476,68 +474,299 @@ Overfull \hbox (2.22221pt too wide) in paragraph at lines 285--293
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 297--300
+Underfull \hbox (badness 10000) in paragraph at lines 304--307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--302
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
-<./images//stats.png, id=250, 829.0975pt x 285.065pt>
+<./images//stats.png, id=108, 829.0975pt x 285.065pt>
 File: ./images//stats.png Graphic file (type png)
 <use ./images//stats.png>
-Package pdftex.def Info: ./images//stats.png  used on input line 305.
+Package pdftex.def Info: ./images//stats.png  used on input line 312.
 (pdftex.def)             Requested size: 284.52083pt x 142.26247pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 309--310
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--316
+Underfull \hbox (badness 10000) in paragraph at lines 321--323
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
 [9 <./images//histogram.png> <./images//scatter-plot.png> <./images//stats.png>]
-<./images//report-card.png, id=266, 682.55pt x 873.2625pt>
+<./images//report-card.png, id=126, 682.55pt x 873.2625pt>
 File: ./images//report-card.png Graphic file (type png)
 <use ./images//report-card.png>
-Package pdftex.def Info: ./images//report-card.png  used on input line 323.
+Package pdftex.def Info: ./images//report-card.png  used on input line 330.
 (pdftex.def)             Requested size: 227.61678pt x 284.52649pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
-[10 <./images//report-card.png>] (./report.aux)
-Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 9CEB86FD1A990F2E565BA24AFAB9B5F9;3507.
- ) 
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:337: LaTeX Error: Environment thebiblography undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.337 \begin{thebiblography}
+                            {9}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:341: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.341 \bibitem{bash}
+                    Bash \url{https://www.gnu.org/software/bash/manual/bash....
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:341: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.341 \bibitem{bash}
+                    Bash \url{https://www.gnu.org/software/bash/manual/bash....
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:341: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.341 \bibitem{bash}
+                    Bash \url{https://www.gnu.org/software/bash/manual/bash....
+I'm forgetting what you said and using zero instead.
+
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:342: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.342 \bibitem{awk}
+                    \url{https://www.gnu.org/software/gawk/manual/gawk.html}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:342: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.342 \bibitem{awk}
+                    \url{https://www.gnu.org/software/gawk/manual/gawk.html}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:342: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.342 \bibitem{awk}
+                    \url{https://www.gnu.org/software/gawk/manual/gawk.html}
+I'm forgetting what you said and using zero instead.
+
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:343: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.343 \bibitem{python}
+                       \url{https://docs.python.org/3/}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:343: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.343 \bibitem{python}
+                       \url{https://docs.python.org/3/}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:343: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.343 \bibitem{python}
+                       \url{https://docs.python.org/3/}
+I'm forgetting what you said and using zero instead.
+
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:344: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.344 \bibitem{matplotlib}
+                           \url{https://matplotlib.org/}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:344: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.344 \bibitem{matplotlib}
+                           \url{https://matplotlib.org/}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:344: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.344 \bibitem{matplotlib}
+                           \url{https://matplotlib.org/}
+I'm forgetting what you said and using zero instead.
+
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:345: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.345 \bibitem{scipy}
+                      \url{https://www.scipy.org/}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:345: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.345 \bibitem{scipy}
+                      \url{https://www.scipy.org/}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:345: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.345 \bibitem{scipy}
+                      \url{https://www.scipy.org/}
+I'm forgetting what you said and using zero instead.
+
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:346: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.346 \bibitem{PIL}
+                    \url{https://pillow.readthedocs.io/en/stable/}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:346: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.346 \bibitem{PIL}
+                    \url{https://pillow.readthedocs.io/en/stable/}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:346: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.346 \bibitem{PIL}
+                    \url{https://pillow.readthedocs.io/en/stable/}
+I'm forgetting what you said and using zero instead.
+
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:347: LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.347     \bibitem{csv}
+                        \url{https://docs.python.org/3/library/csv.html
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:347: Undefined control sequence.
+<argument> \@listctr 
+                     
+l.347     \bibitem{csv}
+                        \url{https://docs.python.org/3/library/csv.html
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+/home/siddhant/Desktop/bash-grader/latex/report.tex:347: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.347     \bibitem{csv}
+                        \url{https://docs.python.org/3/library/csv.html
+I'm forgetting what you said and using zero instead.
+
+)
+Runaway argument?
+{https://docs.python.org/3/library/csv.html^^M^^M\bibitem {os} \url {\ETC.
+! File ended while scanning use of \hyper@n@rmalise.
+<inserted text> 
+                \par 
+<*> ...ddhant/Desktop/bash-grader/latex/report.tex
+                                                  
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Emergency stop.
+<*> ...ddhant/Desktop/bash-grader/latex/report.tex
+                                                  
+*** (job aborted, no legal \end found)
+
+ 
 Here is how much of TeX's memory you used:
- 11136 strings out of 480171
- 180174 string characters out of 5894490
- 479138 words of memory out of 5000000
- 28914 multiletter control sequences out of 15000+600000
+ 11089 strings out of 480171
+ 179493 string characters out of 5894490
+ 477705 words of memory out of 5000000
+ 28875 multiletter control sequences out of 15000+600000
  474316 words of font info for 45 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  67i,8n,77p,734b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/siddhant/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (10 pages, 851083 bytes).
-PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
- 346 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+!  ==> Fatal error occurred, no output PDF file produced!
