@@ -59,7 +59,7 @@ then
     #shifts the arguments to the left by 2 positions
     shift
     shift
-        bash git_scripts/git_commit2.sh $@ #calls the git_commit2.sh script and passes the commit message as an argument
+        bash git_scripts/git_commit.sh $@ #calls the git_commit2.sh script and passes the commit message as an argument
     else
         echo 'Use "bash submission.sh git_commit -m <message>" to commit changes.'
     fi
